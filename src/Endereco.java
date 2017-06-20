@@ -1,7 +1,7 @@
 /**
  * Created by pdr_m on 18/06/2017.
  */
-public class Endereco {
+class Endereco {
     private int conteudo;
 
     private int valorEndereco;
@@ -10,7 +10,7 @@ public class Endereco {
         this.conteudo = 0;
     }
 
-    public int getConteudo() {
+    private int getConteudo() {
         return conteudo;
     }
 

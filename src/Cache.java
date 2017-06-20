@@ -3,7 +3,7 @@ import java.util.ArrayList;
 /**
  * Created by pdr_m on 18/06/2017.
  */
-public class Cache {
+class Cache {
 
     private int numeroLinhas;
 
@@ -23,21 +23,21 @@ public class Cache {
             l.setNumLinha(i);
             this.linhas.add(l);
         }
-
-//        this.mostrarCache();
     }
 
-    public void mostrarCache() {
+    void mostrarCache() {
         for(Linha l : this.getLinhas()) {
-            if(l != null){
-                System.out.println(l.toString());
-            } else {
-                System.out.println("0-0-0-0");
+            for(int i = 0; i < Config.getTamanhoDoBloco(); i++){
+                if(l != null){
+                    System.out.println(l.toString());
+                } else {
+                    System.out.println("0-0-0-0");
+                }
             }
         }
     }
 
-    public void setBloco(Bloco bloco, int linhaCache) {
+    void setBloco(Bloco bloco, int linhaCache) {
         Linha l = new Linha();
         l.setNumLinha(linhaCache);
         l.setBlocoDaMemoria(bloco);
@@ -48,7 +48,7 @@ public class Cache {
         return this.getLinhas().get(linhaCache).getBlocoDaMemoria();
     }
 
-    public int getNumeroLinhas() {
+    int getNumeroLinhas() {
         return numeroLinhas;
     }
 
@@ -56,7 +56,7 @@ public class Cache {
         this.numeroLinhas = numeroLinhas;
     }
 
-    public ArrayList<Linha> getLinhas() {
+    ArrayList<Linha> getLinhas() {
         return linhas;
     }
 

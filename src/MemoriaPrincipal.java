@@ -3,7 +3,7 @@ import java.util.ArrayList;
 /**
  * Created by pdr_m on 18/06/2017.
  */
-public class MemoriaPrincipal {
+class MemoriaPrincipal {
 
     private int incrementador = 0;
 
@@ -11,7 +11,7 @@ public class MemoriaPrincipal {
 
     private ArrayList<Bloco> blocos;
 
-    public MemoriaPrincipal() {
+    MemoriaPrincipal() {
         this.numeroBlocos = Config.getNumeroBlocosMemoriaPrincipal();
 
         this.blocos = new ArrayList<>();
@@ -36,11 +36,9 @@ public class MemoriaPrincipal {
 
             this.blocos.add(b);
         }
-
-        this.mostrarMemoriaPrincipal();
     }
 
-    public void mostrarMemoriaPrincipal() {
+    void mostrarMemoriaPrincipal() {
         for(Bloco b : blocos) {
             System.out.println(b.toString());
         }
@@ -50,11 +48,11 @@ public class MemoriaPrincipal {
         this.getBlocos().set(blocoMemoriaPrincipal, bloco);
     }
 
-    public Bloco getBloco(int blocoMemoriaPrincipal) {
+    Bloco getBloco(int blocoMemoriaPrincipal) {
         return this.getBlocos().get(blocoMemoriaPrincipal);
     }
 
-    public int getNumeroBlocos() {
+    int getNumeroBlocos() {
         return numeroBlocos;
     }
 
@@ -62,7 +60,7 @@ public class MemoriaPrincipal {
         this.numeroBlocos = numeroBlocos;
     }
 
-    public ArrayList<Bloco> getBlocos() {
+    private ArrayList<Bloco> getBlocos() {
         return blocos;
     }
 

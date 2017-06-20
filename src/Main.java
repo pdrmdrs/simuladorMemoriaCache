@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
-public class Main {
+class Main {
 
-    private static Scanner leitor = new Scanner(System.in);
+    private static final Scanner leitor = new Scanner(System.in);
 
     public static void main(String[] args) {
         System.out.println("Olá, seja bem vindo ao Simulador de Memória Cache!!");

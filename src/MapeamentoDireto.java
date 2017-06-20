@@ -26,9 +26,7 @@ public class MapeamentoDireto extends Mapeamento implements Substituicao{
     @Override
     public int calcularLinhaCache(int palavra) {
 
-        int linhaCache = calcularBlocoMemoriaPrincipal(palavra) % Config.getNumeroLinhasCache();
-
-        return linhaCache;
+        return calcularBlocoMemoriaPrincipal(palavra) % Config.getNumeroLinhasCache();
     }
 
     @Override

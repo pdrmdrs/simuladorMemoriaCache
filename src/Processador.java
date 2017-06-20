@@ -3,9 +3,9 @@ import java.util.Scanner;
 /**
  * Created by pdr_m on 18/06/2017.
  */
-public class Processador {
+class Processador {
 
-    private Scanner leitor;
+    private final Scanner leitor;
 
     private Cache cache;
 
@@ -25,9 +25,6 @@ public class Processador {
     private int opcaoMenu = 99;
 
     private int enderecoParaSerLido_READ;
-
-    private int enderecoParaSerEscrito_WRITE;
-    private int novoValorParaSerEscrito_WRITE;
 
     Processador(Scanner leitor) {
         this.leitor = leitor;
@@ -85,21 +82,21 @@ public class Processador {
                     break;
                 case 2:
                     System.out.println("Digite o endereço a ser escrito: ");
-                    this.enderecoParaSerEscrito_WRITE = this.leitor.nextInt();
+                    int enderecoParaSerEscrito_WRITE = this.leitor.nextInt();
                     System.out.println("Digite o novo valor: ");
-                    this.novoValorParaSerEscrito_WRITE = this.leitor.nextInt();
+                    int novoValorParaSerEscrito_WRITE = this.leitor.nextInt();
                     //fazer as coisa de escrever o novo valor no endereço
 
-                    System.out.println("----ESCREVENDO NOVO VALOR " + this.novoValorParaSerEscrito_WRITE + " EM " +
-                    this.enderecoParaSerEscrito_WRITE);
+                    System.out.println("----ESCREVENDO NOVO VALOR " + novoValorParaSerEscrito_WRITE + " EM " +
+                            enderecoParaSerEscrito_WRITE);
 
                     break;
                 case 3:
                     //mostrar as coisas da cache
 
-//                    System.out.println("Memória Cache: ");
-//                    System.out.println("Linha-Bloco-Endereço-Conteúdo");
-//                    this.cache.mostrarCache();
+                    System.out.println("Memória Cache: ");
+                    System.out.println("Linha-Bloco-Endereço-Conteúdo");
+                    this.cache.mostrarCache();
 
                     System.out.println("Memória Principal: ");
                     System.out.println("Bloco-Endereço-Conteúdo");
@@ -132,6 +129,10 @@ public class Processador {
                     this.mapeamento.calcularBlocoMemoriaPrincipal(this.enderecoParaSerLido_READ),
                     linhaCache);
         }
+
+    }
+
+    private void escrever() {
 
     }
 

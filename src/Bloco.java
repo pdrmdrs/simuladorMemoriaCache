@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -33,7 +32,7 @@ public class Bloco {
         return resultado;
     }
 
-    public int getNumBloco() {
+    private int getNumBloco() {
         return numBloco;
     }
 

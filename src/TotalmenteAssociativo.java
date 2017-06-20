@@ -10,6 +10,20 @@ public class TotalmenteAssociativo extends Mapeamento {
 
     @Override
     public boolean verificarNaCache(Cache cache, int linhaCache, int palavra) {
-        return false;
+
+        boolean achou = false;
+
+        for(Linha l : cache.getLinhas()){
+            Bloco b = l.getBlocoDaMemoria();
+            if(b != null) {
+                for(Endereco e : b.getEnderecos()){
+                    if(e.getValorEndereco() == palavra){
+                        achou = true;
+                    }
+                }
+            }
+        }
+
+        return achou;
     }
 }

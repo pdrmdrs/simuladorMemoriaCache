@@ -1,32 +1,36 @@
 /**
  * Created by pdr_m on 18/06/2017.
  */
-public class Linha {
+class Linha {
 
     private int numLinha;
 
-    public Bloco getBlocoDaMemoria() {
+    Bloco getBlocoDaMemoria() {
         return blocoDaMemoria;
     }
 
-    public void setBlocoDaMemoria(Bloco blocoDaMemoria) {
+    void setBlocoDaMemoria(Bloco blocoDaMemoria) {
         this.blocoDaMemoria = blocoDaMemoria;
     }
 
     private Bloco blocoDaMemoria;
 
-    public int getNumLinha() {
+    private int getNumLinha() {
         return numLinha;
     }
 
-    public void setNumLinha(int numLinha) {
+    void setNumLinha(int numLinha) {
         this.numLinha = numLinha;
     }
 
     public String toString() {
-        String resultado = "";
+        String resultado = this.getNumLinha() + "-";
 
-        resultado = this.getNumLinha() + "-" + this.getBlocoDaMemoria().toString();
+        if(this.getBlocoDaMemoria() == null){
+            resultado = resultado + "0-0-0";
+        } else {
+            resultado = resultado + this.getBlocoDaMemoria().toString();
+        }
 
         return resultado;
     }
